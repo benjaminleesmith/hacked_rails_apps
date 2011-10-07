@@ -1,4 +1,5 @@
 HackedRailsApps::Application.routes.draw do
+  resources :logs, :only => [:create, :index]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
