@@ -4,7 +4,7 @@ class LogsController < ApplicationController
   end
 
   def create
-    @log = Log.create!(:log => params[:log])
+    @log = Log.create!(:log => "ip: #{request.env['HTTP_X_FORWARDED_FOR'] || request.remote_ip} - #{params[:log]}")
     render :nothing => true
   end
 end
